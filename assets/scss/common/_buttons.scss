@@ -16,7 +16,7 @@
     @include fade-transition;
 
     &.primary {
-        background: $green;
+        
     }
 
     &.border {
@@ -25,8 +25,8 @@
         background: none;
         
         &:hover {
-            border: solid $green .1rem;
-            color: $green;
+            
+            
             @include fade-transition;
         }
 
@@ -72,19 +72,19 @@
     &:hover {
         span {
         @include fade-transition;
-        color: $green;
+        
         }
 
         &:before {
             content: '';
             width:100%;
-            border:solid $green .1rem;
+            
             -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
             transition: all .6s cubic-bezier(.42, 0, .58, 1);
         }
 
         svg {
-            fill: $green;
+   
             -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
             transition: all .6s cubic-bezier(.42, 0, .58, 1);
             margin-right: 0;
