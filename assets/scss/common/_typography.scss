@@ -1,0 +1,65 @@
+﻿@import "../base/_base";
+
+/*#region Fonts */
+$font-normal: normal;
+/*#endregion */
+
+
+/*#region Device Resolution */
+
+$desktop: 1920px;
+$desktop-sm: 1368px;
+$tablet-h: 1024px;
+$tablet-v: 768px;
+$phone: 648px;
+
+/*#endregion */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+small {
+    color: $dark;
+}
+
+
+h6 {
+    font-size: clamp(4.8rem, 12vw, 7.4rem);
+    line-height: 1;
+    letter-spacing: -4.31667px;
+    font-weight: $font-normal;
+    margin: 8rem 0;
+    @media only screen and (max-width: $tablet-h) {
+        font-size: clamp(3.8rem, 12vw, 4rem);
+        line-height: 1;
+        letter-spacing: -2.31667px;
+        font-weight: normal;
+     }
+}
+
+
+h3 {
+    font-size: clamp(2rem, 12vw, 3rem);
+    line-height: 1;
+    letter-spacing: -.80px;
+    font-weight: $font-medium;
+    margin-bottom: 2rem;
+}
+
+small {
+    font-size: clamp(2rem, 12vw, 2.4rem);
+    line-height: 1;
+    letter-spacing: -0.71px;
+    font-weight: $font-normal;
+    margin-top: 6rem;
+
+    @media only screen and (max-width: $tablet-v) {
+        font-size: clamp(1.4rem, 12vw, 1.6rem);
+    }
+}
+

@@ -1,0 +1,91 @@
+﻿@import "fonts";
+@import "base/base";
+@import "nav/_header";
+@import "nav/_footer";
+@import "common/_buttons";
+@import "common/_common";
+@import "common/_grid";
+@import "common/_typography";
+@import "common/_menu";
+
+body,
+html {
+    font-family: $font-family;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    list-style: none;
+    box-shadow: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* #region Custom Scroll */
+
+body {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: #000000;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #555555;
+    }
+    
+    &::-webkit-scrollbar-button {
+        background-color: #000000;
+        background-image: url();
+    }
+    
+    &::-webkit-scrollbar-button:vertical:increment {
+        background-position: -64px -16px;
+    }
+    
+    &::-webkit-scrollbar-button:vertical:decrement {
+        background-position: 0 -16px;
+    }
+    
+    &::-webkit-scrollbar-button:horizontal:increment {
+        background-position: -32px -16px;
+    }
+    
+    &::-webkit-scrollbar-button:horizontal:decrement {
+        background-position: -96px -16px;
+    }
+    
+    &::-webkit-scrollbar-corner {
+        background-color: #000000;
+    }
+    
+}
+
+/* #endregion */
+
+#smoother-content {
+    will-change: transform;
+  }
+

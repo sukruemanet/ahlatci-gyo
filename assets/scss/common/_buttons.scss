@@ -1,0 +1,105 @@
+﻿@import "../base/base";
+
+.button {
+    width: fit-content;
+    height: 6rem;          
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding:0 4rem;
+    border-radius: 100vmax;
+    color: $white;
+    font-weight: $font-medium;
+    font-size: 2rem;
+    cursor: pointer;
+    @include fade-transition;
+
+    &.primary {
+        background: $green;
+    }
+
+    &.border {
+        border: solid $dark .1rem;
+        color: $dark;
+        background: none;
+        
+        &:hover {
+            border: solid $green .1rem;
+            color: $green;
+            @include fade-transition;
+        }
+
+        &.small {
+            height: 3rem;
+            font-size: 1.6rem;
+            padding: 0 2rem;
+        }
+    }
+}
+
+.button-border-animated {
+    width: fit-content;
+    height: 5rem;          
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 2rem;
+    border-radius: 100vmax;
+
+    span {
+        font-size: clamp(1.6rem, 12vw, 2rem);
+        letter-spacing: -0.7125px;
+        color: $dark;
+        @include fade-transition;
+        position: relative;
+    }
+    
+    &:before {
+        content: '';
+        width:5rem;
+        height: 5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border:solid rgba(#1E1C21, .40) .1rem;
+        border-radius: 100vmax;
+        @include fade-transition;
+        -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
+        transition: all .6s cubic-bezier(.42, 0, .58, 1);
+    }
+
+    &:hover {
+        span {
+        @include fade-transition;
+        color: $green;
+        }
+
+        &:before {
+            content: '';
+            width:100%;
+            border:solid $green .1rem;
+            -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
+            transition: all .6s cubic-bezier(.42, 0, .58, 1);
+        }
+
+        svg {
+            fill: $green;
+            -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
+            transition: all .6s cubic-bezier(.42, 0, .58, 1);
+            margin-right: 0;
+        }
+    }
+
+    svg {
+        width: 5rem;
+        height: 5rem;
+        fill: #616063;
+        stroke: #1E1C21;
+        margin-right: 2rem;
+        stroke-width: .1;
+        -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
+        transition: all .6s cubic-bezier(.42, 0, .58, 1);
+        position: relative;
+    }
+}

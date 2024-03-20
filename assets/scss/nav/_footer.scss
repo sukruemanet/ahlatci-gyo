@@ -1,0 +1,174 @@
+﻿@import "../base/base";
+
+footer {
+    padding: 5vw 5vw 8rem;
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    position: relative;
+    background: #F4F6F3;
+    overflow: hidden;
+
+    @media only screen and (max-width: $tablet-v) {
+        padding: 6rem 5vw 4rem;
+     }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 80rem;
+        height: 100%;
+        right: -14rem;
+        bottom: -17rem;
+        background: url(/assets/images/main/footer-logo.svg) no-repeat right;
+        background-size: contain;
+
+        @media only screen and (max-width: $tablet-v) {
+            width: 100%;
+            right: -10rem;
+            bottom: -50rem;
+         }
+    }
+
+     form {
+        width: 42rem;
+        gap: 2rem;
+        margin: 6rem 0;
+
+        @media only screen and (max-width: $desktop) {
+            width: 32rem;
+        }
+
+        @media only screen and (max-width: $tablet-v) {
+            width: 100%;
+            margin: 2rem 0;
+         }
+
+        .form-item {
+            flex-direction: row;
+            border: solid #9CABA2 .1rem;
+            border-radius: 1rem;
+
+            input {
+                border: none;
+            }
+        }
+
+        .button {
+            width: 5rem;
+            padding: 0;
+            border: none !important;
+        }
+     }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+
+        @media only screen and (max-width: $tablet-h) {
+            flex-direction: column;
+         }
+
+         div {
+            @media only screen and (max-width: $tablet-v) {
+                width: 100%;
+             }
+         }
+
+        .logo {
+            width: 26rem;
+            margin-bottom: 4rem;
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+
+            @media only screen and (max-width: $tablet-v) {
+                margin-bottom: 4rem;
+             }
+        }
+
+        .right {
+            max-width: 90rem;
+
+            .address {
+                gap: 8rem;
+                padding-left: 10rem;
+
+                @media only screen and (max-width: $desktop) {
+                    gap: 6rem 6rem;
+                }
+
+                @media only screen and (max-width: $tablet-h) {
+                    gap: 4rem 2rem;
+                    padding: 0;
+                }
+
+                .item {
+                    align-content: flex-start;
+
+                    span {
+                        font-size: 2.6rem;
+                        font-weight: $font-medium;
+                        color: #183B28;
+
+                        @media only screen and (max-width: $desktop) {
+                            font-size: 1.8rem;
+                        }
+                    }
+
+                    font-size: 1.5rem;
+                    line-height: 1.4;
+                    font-weight: $font-normal;
+                    color: #5A6868;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: solid #f2f2f2 .1rem;
+        padding-top: 10rem;
+        position: relative;
+
+        @media only screen and (max-width: $tablet-h) {
+            margin-top: 0;
+            padding-top: 2rem;
+            border: none;
+        }
+
+        @media only screen and (max-width: $tablet-v) {
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-top: 4rem;
+        }
+
+        a {
+            font-size: 1.6rem;
+            color: #183B28;
+
+            @media only screen and (max-width: $desktop) {
+                font-size: 1.4rem;
+            }
+        }
+
+        .copyright {
+            font-size: 1.6rem;
+            color: #183B28;
+
+            @media only screen and (max-width: $desktop) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
