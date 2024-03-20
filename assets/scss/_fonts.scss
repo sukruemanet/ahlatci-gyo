@@ -1,42 +1,33 @@
-﻿$font-family: 'Inter', sans-serif;
+﻿
+$font-family: 'AktivGrotesk';
 $font-normal: normal;
 $font-medium: 500;
-$font-semibold: 600;
 $font-bold: bold;
 
+
 @font-face {
-    font-family: 'Inter';
-    src: url('/assets/scss/fonts//assets/scss/fontsInter-Bold.woff2') format('woff2'),
-        url('/assets/scss/fonts//assets/scss/fontsInter-Bold.woff') format('woff');
+    font-family: 'AktivGrotesk';
+    src: url('../fonts/AktivGrotesk-Bold.woff2') format('woff2'),
+        url('../fonts/AktivGrotesk-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('/assets/scss/fonts//assets/scss/fontsInter-Regular.woff2') format('woff2'),
-        url('/assets/scss/fonts//assets/scss/fontsInter-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/assets/scss/fonts//assets/scss/fontsInter-Medium.woff2') format('woff2'),
-        url('/assets/scss/fonts//assets/scss/fontsInter-Medium.woff') format('woff');
+    font-family: 'AktivGrotesk';
+    src: url('../fonts/AktivGrotesk-Medium.woff2') format('woff2'),
+        url('../fonts/AktivGrotesk-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('/assets/scss/fonts//assets/scss/fontsInter-SemiBold.woff2') format('woff2'),
-        url('/assets/scss/fonts//assets/scss/fontsInter-SemiBold.woff') format('woff');
-    font-weight: 600;
+    font-family: 'AktivGrotesk';
+    src: url('../fonts/AktivGrotesk-Regular.woff2') format('woff2'),
+        url('../fonts/AktivGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-
