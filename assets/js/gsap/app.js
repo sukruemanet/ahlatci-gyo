@@ -93,3 +93,40 @@ mm.add("(min-width: 1024px)", () => {
 
 var tl = new TimelineMax({ repeat: -1, yoyo: true });
 tl.fromTo(".down", 1, { y: -10 }, { ease: Power0.easeNone, y: 10 });
+
+
+//Menu
+const menuopen = document.querySelector(".menu-open");
+const menu = document.querySelector('.main-menu');
+const menuItemslg = menu.querySelectorAll('ul li a');
+
+var mainMenu = gsap.timeline({ paused: true });
+
+mainMenu.to(menu, {
+  duration: 1.4,
+  opacity: 1,
+  right: '0',
+  ease: 'expo.inOut',
+});
+
+mainMenu.fromTo(
+  menuItemslg,
+  {
+    opacity: 0,
+    y: 100,
+  },
+  {
+    opacity: 1,
+    duration: 1,
+    ease: 'power4.out',
+    y: 0,
+    stagger: 0.2,
+  },
+  "-=.4"
+);
+
+mainMenu.reverse();
+
+menuopen.addEventListener('click', () => {
+  mainMenu.reversed(!mainMenu.reversed());
+});

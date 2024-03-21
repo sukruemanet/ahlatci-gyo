@@ -12,6 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 4.8rem;
+  z-index: 2;
 
   @media only screen and (max-width: $tablet-h) {
     padding:0 1rem;
@@ -56,84 +57,161 @@ header {
    }
   }
 
-  nav {
+  .hamburger-menu-item {
     display: flex;
-    gap: 2rem;
+    align-items: flex-start;
 
-    @media only screen and (max-width: $tablet-v) {
-      flex-direction: column-reverse;
-      align-items: flex-end;
-      gap: 0;
+    @media only screen and (max-width: $tablet-h) {
+      width: 6rem;
     }
 
-    ul {
-      display: flex;
-      gap: 3rem;
+    .text {
+      line-height: 5rem;
+      overflow: hidden;
+      color: $white;
+      font-weight: 1.8rem;
 
-      @media only screen and (max-width: $desktop) {
-        gap: 1rem;
+      @media only screen and (max-width: $tablet-h) {
+        display: none;
       }
 
-      li {
+      // &.up-down {
+      // transform: translateY(-2.5rem);
+      // }
+    }
+
+    .mobile-menu {
+      display: flex;
+      height: 5rem;
+      color: $white;
+      font-size: 2rem;
+      font-weight: $font-medium;
+      align-items: center;
+      gap: 1rem;
+      overflow: hidden;
+  
+      .menu-button {
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 100%;
         display: flex;
+        justify-content: center;
         align-items: center;
-        height: 4rem;
-
-        a {
-          color: $white;
-          font-size: 2.2rem;
-          font-weight: $font-medium;
-          letter-spacing: -0.2375px;
-          line-height: 1;
-          @include fade-transition;
-
-          &:hover {
-            opacity: .5;
-            @include fade-transition;
+        
+        #hamburger-menu {
+          width: 2.6rem;
+          height: 1rem;
+          position: relative;
+    
+          span {
+            opacity: 1;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: .2rem;
+            background: $white;
+            position: absolute;
+            transform: rotate(0deg);
+            transition: .4s ease-in-out;
+    
+            &:nth-child(1) {
+              top: 0;
+            }
+    
+            &:nth-child(2) {
+              top: .8rem;
+            }
           }
+    
+          &.open {
 
-          @media only screen and (max-width: $desktop) {
-            font-size: 1.6rem;
-          }
-
-          @media only screen and (max-width: $tablet-h) {
-            font-size: 1.5rem;
+            span {
+              &:nth-child(1) {
+                transform: translateY(4px) rotate(135deg);
+              }
+      
+              &:nth-child(2) {
+                transform: translateY(-4px) rotate(-135deg);
+              }
+            }
           }
         }
       }
+    }   
+  }
+}
 
-      .button {
-        height: 4rem;
-        margin-right: 0;
-        color: $white;
 
-        @media only screen and (max-width: $tablet-h) {
-          padding: 0 1rem;
-          font-size: 1.8rem;
-       }
-      }
-    }
-    
-    .lang {
+.main-menu {
+  position: fixed;
+  width: 50rem;
+  height: 100%;
+  background: $blue-1;
+  right: -100%;
+  top: 0;
+  display: flex;
+  z-index: 1;
+  overflow: hidden;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: 50%;
       display: flex;
-      align-items: center;
-      gap: .5rem;
-      font-size: 2.2rem;
-      color: $white;
+      overflow: hidden;
+      height: 8rem;
+      flex-shrink: 0;
 
       @media only screen and (max-width: $desktop) {
-        font-size: 1.6rem;
+        height: 8rem;
       }
 
-      @media only screen and (max-width: $tablet-h) {
-        font-size: 1.5rem;
-      }
+      &:hover {
+        a {
+          color: $white;
+          @include fade-transition;
+          gap: 4rem;
 
-      svg {
-        width: 2.4rem;
-        fill: $white;
+          i {
+            opacity: 1;
+            visibility: visible;
+            @include fade-transition;
+          }
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        font-size: 2.2rem;
+        color: $white;
+        gap: 0;
+        @include fade-transition;
+
+        i {
+          opacity: 0;
+          visibility: hidden;
+          @include fade-transition;
+        }
       }
     }
   }
 
+  .menu-wrapper {
+    width: 100%;
+    display: flex;
+
+    .item {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-content {
+      flex: 1;
+      padding: 20rem 6rem 6rem;
+    }
+
+  }
 }
