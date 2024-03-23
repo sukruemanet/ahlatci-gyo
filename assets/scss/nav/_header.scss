@@ -143,7 +143,7 @@ header {
 }
 
 .main-menu {
-  width: 50rem;
+  width: 60rem;
   position: fixed;
   height: 100vh;
   background: $blue-1;
@@ -153,14 +153,16 @@ header {
   flex-direction: column;
   z-index: 1;
   visibility: hidden;
-  padding-top: 22rem;
+  padding: 22rem 6rem 6rem;
   @include fade-transition;
 
-  ul {
+  .menu {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 8rem;
 
     li {
+      width: 50%;
       height: 6rem;
       overflow: hidden;
       display: flex;
@@ -168,79 +170,39 @@ header {
       a {
         display: flex;
         align-items: center;
-        font-size: 2.2vw;
-        color: $dark;
+        font-size: 2.2rem;
+        color: $white;
+        gap: 1rem;
       }
     }
   }
 
-  .menu-bottom {
-    margin-top: 4rem;
+  .social {
     width: 100%;
     display: flex;
+    gap: 1.4rem;
 
     @media only screen and (max-width: $tablet-v) {
-      flex-direction: column;
+      justify-content: flex-start;
     }
 
-    .item {
+    li {
       display: flex;
-      align-items: center;
-      height: 6rem;
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(60px);
-      border-top: solid  #aab5ba .1rem;
+      height: 5rem;
 
-      @media only screen and (max-width: $tablet-v) {
-        border: none;
-        height: 4rem;
-      }
-
-      &:nth-of-type(2) {
-        width: 100%;
-        margin-left: auto;
-
-        @media only screen and (max-width: $tablet-v) {
-          margin-left: 0;
-        }
-      }
-
-      span {
-        width: 60rem;
-        font-size: 1.4rem;
-        color: $black;
-
-        @media only screen and (max-width: $tablet-h) {
-          width: 100%;
-          font-size: 1.2rem;
-        }
-      }
-
-      .social {
-        width: 100%;
+      i {
+        width: 5rem;
+        height: 5rem;
+        background: $blue;
+        border-radius: 100%;
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-end;
-        gap: 1.4rem;
-
-        @media only screen and (max-width: $tablet-v) {
-          justify-content: flex-start;
-        }
-
-        li {
-          i {
-            &.x {
-              svg {
-                width: 2.6rem;
-              }
-            }
-
-            svg {
-              width: 3rem;
-              fill: #032334;
-            }
-          }
+        
+        svg {
+          width: 3rem;
+          fill: $blue-1;
         }
       }
     }

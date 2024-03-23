@@ -94,7 +94,9 @@ mm.add("(min-width: 1024px)", () => {
 //Menu
 const menuopen = document.querySelector(".menu-open");
   const menu = document.querySelector('.main-menu');
-  const menuitem = menu.querySelectorAll('.main-menu ul li a');
+  const menuitem = menu.querySelectorAll('.main-menu .menu li a');
+  const social = menu.querySelectorAll('.main-menu .social li a');
+
 
   var tl = gsap.timeline({ paused: true });
 
@@ -108,6 +110,15 @@ const menuopen = document.querySelector(".menu-open");
   });
 
   tl.from(menuitem, {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power4.out",
+    y: 320,
+    stagger: 0.1,
+    willChange: "transform",
+  }, "-=0.1");
+
+  tl.from(social, {
     opacity: 0,
     duration: 1.2,
     ease: "power4.out",
