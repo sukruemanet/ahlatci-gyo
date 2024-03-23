@@ -93,38 +93,42 @@ mm.add("(min-width: 1024px)", () => {
 
 //Menu
 const menuopen = document.querySelector(".menu-open");
-const menu = document.querySelector('.main-menu');
-const menuitem = menu.querySelectorAll('.main-menu .menu li a');
-const social = menu.querySelectorAll('.main-menu .social li a');
+  const menu = document.querySelector('.main-menu');
+  const menuitem = menu.querySelectorAll('.main-menu .menu li a');
+  const social = menu.querySelectorAll('.main-menu .social li a');
 
-var tl = gsap.timeline({ paused: true });
 
-tl.to(menu, {
-  duration: .5,
-  opacity: 1,
-  right: "0",
-  ease: 'expo.inOut',
-  visibility: "visible",
-  willChange: "transform",
-})
-.from([menuitem, social], {
-  opacity: 0,
-  duration: 1.2,
-  ease: "power4.out",
-  y: 320,
-  stagger: 0.1,
-  willChange: "transform",
-}, "-=0.1");
+  var tl = gsap.timeline({ paused: true });
 
-// Menu kapatıldığında opacity değerlerini sıfırla
-tl.to([menuitem, social], {
-  opacity: 1,
-  duration: 1,
-  ease: "power4.out",
-}, "-=0.2");
+  tl.to(menu, {
+    duration: .5,
+    opacity: 1,
+    right: "0",
+    ease: 'expo.inOut',
+    visibility: "visible",
+    willChange: "transform",
+  });
 
-tl.reverse();
+  tl.from(menuitem, {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power4.out",
+    y: 320,
+    stagger: 0.1,
+    willChange: "transform",
+  }, "-=0.1");
 
-menuopen.addEventListener('click', () => {
-  tl.reversed(!tl.reversed());
-});
+  tl.from(social, {
+    opacity: 0,
+    duration: 1.2,
+    ease: "power4.out",
+    y: 320,
+    stagger: 0.1,
+    willChange: "transform",
+  }, "-=0.1");
+
+  tl.reverse();
+
+  menuopen.addEventListener('click', () => {
+    tl.reversed(!tl.reversed());
+  });
