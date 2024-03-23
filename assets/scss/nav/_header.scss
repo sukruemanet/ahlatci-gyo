@@ -142,76 +142,107 @@ header {
   }
 }
 
-
 .main-menu {
-  position: fixed;
   width: 50rem;
-  height: 100%;
+  position: fixed;
+  height: 100vh;
   background: $blue-1;
-  right: -100%;
+  right: -50rem;
   top: 0;
   display: flex;
+  flex-direction: column;
   z-index: 1;
-  overflow: hidden;
+  visibility: hidden;
+  padding-top: 22rem;
+  @include fade-transition;
 
   ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
     li {
-      width: 50%;
-      display: flex;
+      height: 6rem;
       overflow: hidden;
-      height: 8rem;
-      flex-shrink: 0;
+      display: flex;
 
-      @media only screen and (max-width: $desktop) {
-        height: 8rem;
-      }
-
-      &:hover {
-        a {
-          color: $white;
-          @include fade-transition;
-          gap: 4rem;
-
-          i {
-            opacity: 1;
-            visibility: visible;
-            @include fade-transition;
-          }
-        }
-      }
       a {
         display: flex;
         align-items: center;
-        font-size: 2.2rem;
-        color: $white;
-        gap: 0;
-        @include fade-transition;
-
-        i {
-          opacity: 0;
-          visibility: hidden;
-          @include fade-transition;
-        }
+        font-size: 2.2vw;
+        color: $dark;
       }
     }
   }
 
-  .menu-wrapper {
+  .menu-bottom {
+    margin-top: 4rem;
     width: 100%;
     display: flex;
 
+    @media only screen and (max-width: $tablet-v) {
+      flex-direction: column;
+    }
+
     .item {
-      opacity: 1;
-      visibility: visible;
-    }
+      display: flex;
+      align-items: center;
+      height: 6rem;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(60px);
+      border-top: solid  #aab5ba .1rem;
 
-    .menu-content {
-      flex: 1;
-      padding: 20rem 6rem 6rem;
-    }
+      @media only screen and (max-width: $tablet-v) {
+        border: none;
+        height: 4rem;
+      }
 
+      &:nth-of-type(2) {
+        width: 100%;
+        margin-left: auto;
+
+        @media only screen and (max-width: $tablet-v) {
+          margin-left: 0;
+        }
+      }
+
+      span {
+        width: 60rem;
+        font-size: 1.4rem;
+        color: $black;
+
+        @media only screen and (max-width: $tablet-h) {
+          width: 100%;
+          font-size: 1.2rem;
+        }
+      }
+
+      .social {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.4rem;
+
+        @media only screen and (max-width: $tablet-v) {
+          justify-content: flex-start;
+        }
+
+        li {
+          i {
+            &.x {
+              svg {
+                width: 2.6rem;
+              }
+            }
+
+            svg {
+              width: 3rem;
+              fill: #032334;
+            }
+          }
+        }
+      }
+    }
   }
 }
