@@ -1,70 +1,18 @@
 ﻿@import "../base/base";
 
 footer {
-    padding: 5vw 5vw 8rem;
     display: flex;
     flex-direction: column;
     background: $white;
     position: relative;
-    background: #F4F6F3;
     overflow: hidden;
-
-    @media only screen and (max-width: $tablet-v) {
-        padding: 6rem 5vw 4rem;
-     }
-
-    &::before {
-        content: '';
-        position: absolute;
-        width: 80rem;
-        height: 100%;
-        right: -14rem;
-        bottom: -17rem;
-        background: url(/assets/images/main/footer-logo.svg) no-repeat right;
-        background-size: contain;
-
-        @media only screen and (max-width: $tablet-v) {
-            width: 100%;
-            right: -10rem;
-            bottom: -50rem;
-         }
-    }
-
-     form {
-        width: 42rem;
-        gap: 2rem;
-        margin: 6rem 0;
-
-        @media only screen and (max-width: $desktop) {
-            width: 32rem;
-        }
-
-        @media only screen and (max-width: $tablet-v) {
-            width: 100%;
-            margin: 2rem 0;
-         }
-
-        .form-item {
-            flex-direction: row;
-            border: solid #9CABA2 .1rem;
-            border-radius: 1rem;
-
-            input {
-                border: none;
-            }
-        }
-
-        .button {
-            width: 5rem;
-            padding: 0;
-            border: none !important;
-        }
-     }
+    margin-top: 8rem;
+    padding-bottom: 10rem;
 
     nav {
         display: flex;
-        justify-content: space-between;
         align-items: flex-start;
+        justify-content: space-between;
         position: relative;
 
         @media only screen and (max-width: $tablet-h) {
@@ -79,54 +27,110 @@ footer {
 
         .logo {
             width: 26rem;
-            margin-bottom: 4rem;
         }
 
-        .social {
-            display: flex;
-            gap: 1rem;
 
-            @media only screen and (max-width: $tablet-v) {
-                margin-bottom: 4rem;
-             }
-        }
 
         .right {
-            max-width: 90rem;
+            display: flex;
+            gap: 20rem;
 
-            .address {
-                gap: 8rem;
-                padding-left: 10rem;
+            .menu {
+                display: flex;
+                flex-direction: column;
+                gap: 2.4rem;
 
-                @media only screen and (max-width: $desktop) {
-                    gap: 6rem 6rem;
-                }
-
-                @media only screen and (max-width: $tablet-h) {
-                    gap: 4rem 2rem;
-                    padding: 0;
-                }
-
-                .item {
-                    align-content: flex-start;
-
-                    span {
-                        font-size: 2.6rem;
-                        font-weight: $font-medium;
-                        color: #183B28;
-
+                li {
+                    a {
+                        font-size: 2.4rem;
+                        color: $dark;
+                        @include fade-transition;
+           
                         @media only screen and (max-width: $desktop) {
                             font-size: 1.8rem;
                         }
+
+                        &:hover {
+                            color: $blue;
+                            @include fade-transition;
+                        }
                     }
+                }
+            }
 
-                    font-size: 1.5rem;
-                    line-height: 1.4;
-                    font-weight: $font-normal;
-                    color: #5A6868;
+            .newsletter-social {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
 
-                    @media only screen and (max-width: $desktop) {
-                        font-size: 1.4rem;
+                form {
+                    width: 42rem;
+                    gap: 2rem;
+            
+                    span {
+                        font-size: 2.4rem;
+                        margin-bottom: 3rem;
+                        display: block;
+            
+                        @media only screen and (max-width: $desktop) {
+                            font-size: 1.8rem;
+                         }
+                    }
+            
+                    .form-item {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        border-radius: 1rem;
+                        background: #F7F9FF;
+                        padding: 0 2rem;
+                        height: 7rem;
+                        justify-content: space-between;
+            
+                        
+                        @media only screen and (max-width: $desktop) {
+                            font-size: 1.6rem;
+                         }
+            
+                        input {
+                            border: none;
+                            background: none;
+                            font-size: 1.8rem;
+                        }
+                    }
+            
+                    .button {
+                        width: 5rem;
+                        padding: 0;
+                        border: none !important;
+                    }
+                 }
+
+                .social {
+                    display: flex;
+                    gap: 1rem;
+        
+                    li {
+                        a {
+                            width: 4rem;
+                            height: 4rem;
+                            background: $blue;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 100%;
+                            @include fade-transition;
+    
+                            &:hover {
+                                @include fade-transition;
+                                background: $blue-1;
+                            }
+                            
+                            svg {
+                                width: 2rem;
+                                color: $white;
+                            }
+                        }
                     }
                 }
             }
@@ -136,7 +140,7 @@ footer {
     .bottom {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         border-top: solid #f2f2f2 .1rem;
         padding-top: 10rem;
         position: relative;
@@ -153,12 +157,42 @@ footer {
             margin-top: 4rem;
         }
 
-        a {
-            font-size: 1.6rem;
-            color: #183B28;
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
 
-            @media only screen and (max-width: $desktop) {
-                font-size: 1.4rem;
+            .email {
+                font-size: 2.2rem;
+                color: $dark;
+                @include fade-transition;
+
+                &:hover {
+                    @include fade-transition;
+                    color: $blue;
+                }
+    
+                @media only screen and (max-width: $desktop) {
+                    font-size: 1.8rem;
+                }
+            }
+
+            ul {
+                display: flex;
+                gap: 2rem;
+
+                li {
+                    a {
+                        font-size: 1.4rem;
+                        color: $dark;
+                        @include fade-transition;
+
+                        &:hover {
+                            @include fade-transition;
+                            color: $blue;
+                        }
+                    }
+                }
             }
         }
 

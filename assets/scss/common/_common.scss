@@ -180,3 +180,61 @@
         width: 80rem;
     }
 }
+
+
+.content-investor {
+    margin-bottom: 7rem;
+    display: flex;
+
+    figure {
+        width: 40%;
+        flex-shrink: 0;
+    }
+
+    .content {
+        padding-left: 10rem;
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin: 6rem 0;
+
+            li {
+                &:hover {
+                   a {
+                        @include fade-transition;
+                        background: $blue-2;
+
+                        i {
+                            @include fade-transition;
+                            opacity: 1;
+                       }
+                   }
+                }
+                a {
+                   height: 9rem;
+                   background: $blue-1;
+                   display: flex;
+                   align-items: center;
+                   padding: 0 2rem;
+                   gap: 2rem;
+                   font-size: 3rem;
+                   color: $blue-3;
+                   @include fade-transition;
+
+                   @media only screen and (max-width: $desktop) {
+                    font-size: 2.4rem;
+                 }
+
+                   i {
+                        margin-left: auto;
+                        opacity: 0;
+                        @include fade-transition;
+                   }
+                }
+            }
+        }
+    }
+}
+

@@ -58,3 +58,64 @@
         }
     }
 }
+
+
+.image-card {
+    position: relative;
+    margin: 12rem 0 0;
+    padding-bottom: 8rem;
+    border-bottom: solid $border .1rem;
+
+    figure {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+             
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba($black, .20);
+            z-index: 1;
+        }
+        
+        img {
+            height: 90rem;
+
+            @media only screen and (max-width: $desktop) {
+                height: 70rem;
+            }
+        }
+
+        figcaption {
+            width: 56rem;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            z-index: 2;
+            color: $white;
+            text-align: center;
+
+            span {
+                font-size: 6rem;
+
+                @media only screen and (max-width: $desktop) {
+                    font-size: 3.4rem;
+                }
+            }
+
+            p {
+                font-size: 2rem;
+
+                @media only screen and (max-width: $desktop) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
