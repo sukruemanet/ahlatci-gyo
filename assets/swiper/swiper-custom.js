@@ -13,3 +13,34 @@ var swiper = new Swiper(".startSlider", {
     clickable: true,
   },
 });
+
+//Product Slider
+var swiper = new Swiper(".product-slider", {
+  slidesPerView: 'auto',
+  spaceBetween: 40,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.2,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 3.2,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    1024: {
+      slidesPerView: 2.8,
+      spaceBetween: 20
+    },
+    2560: {
+      slidesPerView: 3.8,
+      spaceBetween: 40
+    }
+  },
+});

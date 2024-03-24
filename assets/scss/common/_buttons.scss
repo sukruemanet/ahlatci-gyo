@@ -38,68 +38,25 @@
     }
 }
 
-.button-border-animated {
-    width: fit-content;
-    height: 5rem;          
+.button-underline {
+    font-size: 2rem;
+    height: 6rem;
     display: flex;
     align-items: center;
-    position: relative;
-    padding-right: 2rem;
-    border-radius: 100vmax;
-
-    span {
-        font-size: clamp(1.6rem, 12vw, 2rem);
-        letter-spacing: -0.7125px;
-        color: $dark;
-        @include fade-transition;
-        position: relative;
-    }
-    
-    &:before {
-        content: '';
-        width:5rem;
-        height: 5rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border:solid rgba(#1E1C21, .40) .1rem;
-        border-radius: 100vmax;
-        @include fade-transition;
-        -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
-        transition: all .6s cubic-bezier(.42, 0, .58, 1);
-    }
+    @include fade-transition;
 
     &:hover {
-        span {
         @include fade-transition;
-        
-        }
-
-        &:before {
-            content: '';
-            width:100%;
-            
-            -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
-            transition: all .6s cubic-bezier(.42, 0, .58, 1);
-        }
-
-        svg {
-   
-            -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
-            transition: all .6s cubic-bezier(.42, 0, .58, 1);
-            margin-right: 0;
-        }
+        opacity: .5;
     }
 
-    svg {
-        width: 5rem;
-        height: 5rem;
-        fill: #616063;
-        stroke: #1E1C21;
-        margin-right: 2rem;
-        stroke-width: .1;
-        -webkit-transition: all .6s cubic-bezier(.42, 0, .58, 1);
-        transition: all .6s cubic-bezier(.42, 0, .58, 1);
-        position: relative;
+    &.light {
+        color: $white;
+        border-bottom: solid $white .1rem;
+    }
+
+    &.dark {
+        color: $dark;
+        border-bottom: solid $dark .1rem;
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 @import "../base/base";
 @import "slider";
+@import "cards";
 
 
 .split-line,
@@ -46,16 +47,74 @@
 .content-captions {
     display: flex;
     min-height: 10rem;
+    margin-bottom: 7rem;
 
     .left {
-        width: 70%;
+        width: 67%;
         background: $blue-2;
         padding: 10rem;
+        
+        span {
+            max-width: 70%;
+
+            @media only screen and (max-width: $desktop) {
+                max-width: 80%;
+            }
+        }
     }  
     
     .right {
-        width: 30%;
+        width: 33%;
         background: $blue-1;
-        padding: 10rem;
+        padding: 7rem 10rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6rem;
+
+        img {
+            width: 36rem;
+
+            @media only screen and (max-width: $desktop) {
+                width: 25rem;
+            }
+        }
     }  
+}
+
+.content-image-caption {
+    border-top: solid $border .1rem;
+    padding-top: 7rem;
+    margin-bottom: 12rem;
+
+    .headline {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        small {
+            font-size: 2.6rem;
+            margin-bottom: 6rem;
+    
+            @media only screen and (max-width: $desktop) {
+                font-size: 1.8rem;
+             }
+        }
+    
+        span {
+            max-width: 80rem;
+            font-size: 4rem;
+            color: #848699;
+            display: block;
+            margin-bottom: 6rem;
+
+            @media only screen and (max-width: $desktop) {
+                font-size: 3.4rem;
+             }
+        }
+    }
+
+    figure {
+        margin-top: -4rem;
+    }
 }

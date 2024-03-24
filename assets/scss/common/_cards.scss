@@ -1,0 +1,60 @@
+
+@import "../base/base";
+@import "slider";
+
+.projects-cards {
+    .item {
+        &:hover {
+            figure {
+                figcaption {
+                    background: $blue;
+                    padding: 6rem 4rem;
+                    @include fade-transition;
+                }
+            }
+        }
+
+        figure {
+            img {
+                height: 80rem;
+                object-fit: cover;
+
+                @media only screen and (max-width: $desktop) {
+                    height: 70rem;
+                }
+            }
+
+            figcaption {
+                display: flex;
+                flex-direction: column;
+                padding: 4rem;
+                gap: 2rem;
+                color: $white;
+                background: $blue-1;
+                @include fade-transition;
+                position: absolute;
+                inset: auto 0 0;
+
+                span {
+                    font-size: 3.2rem;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 2.4rem;
+                    }
+                }
+
+                p {
+                    font-size: 2rem;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+    }
+}

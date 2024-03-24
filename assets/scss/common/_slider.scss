@@ -91,3 +91,43 @@
     }
 }
 
+.content-slider {
+    padding-left: 10rem;
+
+    .slider {
+        position: relative;
+    }
+
+    .content-headline {
+        padding-right: 10rem;
+        margin-bottom: 8rem;
+
+        .head {
+            span {
+                max-width: 70rem;
+            }
+        }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 9rem;
+        height: 9rem;
+
+        @media only screen and (max-width: $desktop-sm) {
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 4rem;
+    }
+
+    .swiper-button-next {
+        right: 4rem;
+    }
+}
+
