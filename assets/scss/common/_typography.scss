@@ -15,17 +15,6 @@ $phone: 648px;
 
 /*#endregion */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-small {
-    color: $dark;
-}
 
 
 h6 {
@@ -51,15 +40,23 @@ h3 {
     margin-bottom: 2rem;
 }
 
-small {
-    font-size: clamp(2rem, 12vw, 2.4rem);
-    line-height: 1;
-    letter-spacing: -0.71px;
-    font-weight: $font-normal;
-    margin-top: 6rem;
 
-    @media only screen and (max-width: $tablet-v) {
-        font-size: clamp(1.4rem, 12vw, 1.6rem);
+
+.content-headline {
+    color: $dark;
+    display: flex;
+    flex-direction: column;
+
+    &.dark {
+        color: $blue-3;
+    }
+
+    small {
+        font-size: 1.8rem;
+        margin-bottom: 6rem;
+    }
+
+    span {
+        font-size: 3.4rem;
     }
 }
-

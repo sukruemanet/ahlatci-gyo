@@ -48,6 +48,36 @@
                 object-fit: cover;
             }
         }
+
+        .caption {
+            max-width: 120rem;
+            position: absolute;
+            inset: auto 10rem 10rem;
+
+            @media only screen and (max-width: $desktop) {
+                max-width: 100rem;
+            }
+
+            span {
+                font-size: 9.4rem;
+                color: $white;
+                margin-bottom: 8rem;
+                display: block;
+
+                @media only screen and (max-width: $desktop) {
+                    font-size: 6.4rem;
+                }
+            }
+
+            p {
+                font-size: 4rem;
+                color: $white;
+
+                @media only screen and (max-width: $desktop) {
+                    font-size: 2.4rem;
+                }
+            }
+        }
     }
 
     .slide-control {
@@ -60,3 +90,4 @@
         z-index: 1;
     }
 }
+
