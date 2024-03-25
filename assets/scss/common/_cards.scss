@@ -71,6 +71,25 @@
     }
 }
 
+.gallery-cards {
+    margin: 10rem 0;
+
+    .item {
+        position: relative;
+
+        figure {
+            img {
+                height: 80rem;
+                object-fit: cover;
+
+                @media only screen and (max-width: $desktop) {
+                    height: 60rem;
+                }
+            }
+        }
+    }
+}
+
 .image-card {
     position: relative;
     margin: 12rem 0 0;
