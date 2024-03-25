@@ -42,6 +42,11 @@ body {
 /* #region Custom Scroll */
 
 body {
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+
     &::-webkit-scrollbar {
         width: 0;
     }

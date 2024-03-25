@@ -1,20 +1,14 @@
 ﻿
 
-$(function () {
-    $(".mobile-menu").click(function (event) {
-        event.stopPropagation();
-        $("#hamburger-menu").toggleClass("open");
+
+$(document).ready(function () {
+    $('.mobile-menu').click(function () {
+        $(this).toggleClass("active");
         $('body').toggleClass("no-scroll");
-        $(".mobile-menu .text").toggleClass("up-down");
+        $("#hamburger-menu").toggleClass("open");
         smoother.paused(true);
     });
-    
-    $(".cookies-close").click(function (event) {
-        $(".cookies").removeClass("visible");
-    });
-  
 });
-
 
 
     
