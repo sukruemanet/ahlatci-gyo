@@ -3,14 +3,14 @@
 
 header {
   height: 10rem;
-  position: absolute;
+  position: fixed;
   inset: 0 4.8rem auto;
   z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
-  @include fade-transition;
+  transition: all .5s;
 
   &:before {
     content: '';
@@ -27,11 +27,13 @@ header {
  }
 
   &.scrollUp {
-    transform: translateY(-10rem)
+    transform: translateY(-10rem);
+    transition: all .5s;
   }
 
   &.scrolled {
-    background: #10450e;
+    transform: translateY(-10rem);
+    transition: all .5s;
   }
 
   .logo {
