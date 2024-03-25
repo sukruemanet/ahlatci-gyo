@@ -8,12 +8,28 @@
     position: relative;
     overflow: hidden;
 
-    figure {
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba($black, .40);
+    }
 
+    figure {
+        
         img {
             width: 100%;
             height: 100vh;
             object-fit: cover;
+        }
+    }
+
+    &.type-1 {
+        .caption {
+            inset: 14rem 10rem 10rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
     }
 
@@ -80,6 +96,55 @@
         z-index: 1;
         right: 0;
         bottom: 0;
+    }
+
+    .breadcrumb {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 6rem;
+
+        li {
+
+            a, span {
+                font-size: 2rem;
+                color: $white;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 4rem;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                height: 6rem;
+                padding: 0 6rem;
+                color: $white;
+                font-weight: $font-medium;
+                border: solid $white .1rem;
+                font-size: 2rem;
+                @include fade-transition;
+
+                @media only screen and (max-width: $desktop) {
+                    height: 5rem;
+                    padding: 0 4rem;
+                    font-size: 1.6rem;
+                }
+
+                &:hover {
+                    @include fade-transition;
+                    background: $blue;
+                    border: solid $blue .1rem;
+                }
+            }
+        }
     }
 }
 
