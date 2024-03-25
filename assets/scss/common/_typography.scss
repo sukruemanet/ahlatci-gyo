@@ -1,11 +1,11 @@
 ﻿@import "../base/_base";
 
-/*#region Fonts */
+
+$font-family: 'AktivGrotesk';
 $font-normal: normal;
-/*#endregion */
+$font-medium: 500;
+$font-bold: bold;
 
-
-/*#region Device Resolution */
 
 $desktop: 1920px;
 $desktop-sm: 1368px;
@@ -13,31 +13,14 @@ $tablet-h: 1024px;
 $tablet-v: 768px;
 $phone: 648px;
 
-/*#endregion */
-
-
-
-h6 {
-    font-size: clamp(4.8rem, 12vw, 7.4rem);
-    line-height: 1;
-    letter-spacing: -4.31667px;
+h1 {
+    font-size: 8rem;
     font-weight: $font-normal;
-    margin: 8rem 0;
-    @media only screen and (max-width: $tablet-h) {
-        font-size: clamp(3.8rem, 12vw, 4rem);
-        line-height: 1;
-        letter-spacing: -2.31667px;
-        font-weight: normal;
-     }
-}
+    color: $white;
 
-
-h3 {
-    font-size: clamp(2rem, 12vw, 3rem);
-    line-height: 1;
-    letter-spacing: -.80px;
-    font-weight: $font-medium;
-    margin-bottom: 2rem;
+    @media only screen and (max-width: $desktop) {
+        font-size: 6.4rem;
+    }
 }
 
 
@@ -69,12 +52,93 @@ h3 {
         font-size: 4rem;
 
         @media only screen and (max-width: $desktop) {
-            font-size: 3.4rem;
+            font-size: 2.4rem;
          }
     }
 
     .head {
         display: flex;
         flex-direction: column;
+    }
+}
+
+.custom-headline {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: url(/assets/images/main/custom-headline.jpg) no-repeat;
+    background-size: cover;
+
+    &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(#0A0E35, .90);
+    }
+
+    .headline {
+        position: relative;
+        width: 100%;
+        padding:14rem 14rem 8rem;
+        display: flex;
+        flex-direction: column;
+      
+        span {
+            font-size: 3rem;
+            color: $white;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .breadcrumb {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 6rem;
+
+        li {
+
+            a, span {
+                font-size: 2rem;
+                color: $blue-3;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    }
+
+    .filter {
+        display: flex;
+        gap: 1rem;
+        margin-top: 4rem;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                height: 6rem;
+                padding: 0 6rem;
+                color: $white;
+                font-weight: $font-medium;
+                border: solid $blue-3 .1rem;
+                font-size: 2rem;
+                @include fade-transition;
+
+                @media only screen and (max-width: $desktop) {
+                    height: 5rem;
+                    padding: 0 4rem;
+                    font-size: 1.6rem;
+                }
+
+                &:hover {
+                    @include fade-transition;
+                    background: $blue;
+                    border: solid $blue .1rem;
+                }
+            }
+        }
     }
 }

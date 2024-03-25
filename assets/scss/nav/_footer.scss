@@ -6,7 +6,7 @@ footer {
     background: $white;
     position: relative;
     overflow: hidden;
-    margin-top: 8rem;
+    margin-top: 10rem;
     padding-bottom: 10rem;
 
     nav {
@@ -14,6 +14,8 @@ footer {
         align-items: flex-start;
         justify-content: space-between;
         position: relative;
+        border-top: solid #f2f2f2 .1rem;
+        padding-top: 8rem;
 
         @media only screen and (max-width: $tablet-h) {
             flex-direction: column;
@@ -141,7 +143,6 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        border-top: solid #f2f2f2 .1rem;
         padding-top: 10rem;
         position: relative;
 
