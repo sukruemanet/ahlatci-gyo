@@ -85,6 +85,40 @@ h1 {
     background: url(/assets/images/main/custom-headline.jpg) no-repeat;
     background-size: cover;
 
+    &.not-found {
+        height: 90vh;
+        display: flex;
+        
+        .headline {
+            justify-content: space-between;
+
+            .content {
+                
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: 4rem;
+                    margin-bottom: 8rem;
+
+                    h1 {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .icon {
+                    img {
+                        width: 40rem;
+
+                        @media only screen and (max-width: $desktop) {
+                            width: 30rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &:before {
         content: '';
         position: absolute;
@@ -156,6 +190,11 @@ h1 {
                 }
             }
         }
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
