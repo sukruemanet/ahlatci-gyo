@@ -217,6 +217,84 @@
     }
 }
 
+.news-cards {
+    margin: 10rem 0;
+
+    &.row {
+        gap: 6rem 4rem;
+
+        @media only screen and (max-width: $desktop) {
+            gap: 10rem 2rem;
+        }
+    }
+
+    .item {
+        position: relative;
+
+        &:hover {
+            figure {
+                figcaption {
+                    span {
+                        color: $blue;
+                        @include fade-transition;
+                    }
+                }
+            }
+        }
+
+        figure {
+            img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+
+                @media only screen and (max-width: $desktop) {
+                    height: 70rem;
+                }
+            }
+
+            figcaption {
+                display: flex;
+                flex-direction: column;
+                padding: 4rem 0;
+                gap: 2rem;
+      
+                @include fade-transition;
+
+                span {
+                    font-size: 3.2rem;
+                    color: $dark;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 2.4rem;
+                    }
+                }
+
+                .date {
+                    font-size: 2rem;
+                    color: $blue-1;
+                    margin-top: 4rem;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+    }
+
+    
+}
+
+.view-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .gallery-cards {
     margin: 10rem 0;
 
