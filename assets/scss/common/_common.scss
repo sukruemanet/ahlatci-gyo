@@ -47,6 +47,10 @@
     min-height: 10rem;
     margin-bottom: 7rem;
 
+    &.type-1 {
+        margin-bottom: 0;
+    }
+
     .left {
         width: 67%;
         background: $blue-2;
@@ -272,3 +276,59 @@
     }
 }
 
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 12rem;
+
+    .image {
+        grid-column: span 5;
+        grid-row: span 2;
+
+        figure {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    .item-1 {
+        grid-column: span 7;
+        color: $white;
+
+    }
+
+    .item-2 {
+        grid-column: span 7;
+        position: relative;
+        color: $dark;
+        
+        &::before {
+            content: '';
+            background: $white;
+            position: absolute;
+            height: 100%;
+            left: -200%;
+            right: -200%;
+            bottom: -1rem;
+            z-index: -1;
+        }
+    }
+
+    .item {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        p {
+            margin-left: 20rem;
+            font-size: 2.2rem;
+            line-height: 1.4;
+
+            @media only screen and (max-width: $desktop) {
+                font-size: 1.6rem;
+             }
+        }
+    }
+}

@@ -293,3 +293,56 @@
         }
     }
 }
+
+.card-items {
+    display: flex;
+    flex-direction: column;
+
+    &.mt {
+        margin-top: 10rem;
+    }
+
+    .items {
+        display: flex;
+        justify-content: space-between;
+        gap: 20rem;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            .caption {
+                max-width: 80rem;
+
+                span {
+                    font-size: 5rem;
+                    margin-bottom: 4rem;
+                    display: block;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 3.4rem;
+                     }
+                }
+    
+                p {
+                    font-size: 2.2rem;
+                    line-height: 1.4;
+
+                    @media only screen and (max-width: $desktop) {
+                        font-size: 1.6rem;
+                     }
+                }
+            }
+        }
+
+        figure {
+            width: 46rem;
+            flex-shrink: 0;
+        }
+    }
+}

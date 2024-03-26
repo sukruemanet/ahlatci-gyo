@@ -35,6 +35,22 @@ h1 {
         align-items: flex-end;
     }
 
+    &.type-2 {
+        background: $blue-2;
+    }
+
+    &.type-2 {
+        width: 100%;
+        padding: 10rem 0 0;
+        
+        span {
+            max-width: 200rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 10rem;
+        }
+    }
+
     &.dark {
         color: $blue-3;
     }
