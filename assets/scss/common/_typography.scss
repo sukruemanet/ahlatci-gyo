@@ -158,3 +158,36 @@ h1 {
         }
     }
 }
+
+.content-caption-center {
+    margin: 10rem 0;
+    display: flex;
+    justify-content: center;
+
+    .caption {
+        max-width: 60rem;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+
+        span {
+            font-size: 5rem;
+            margin-bottom: 4rem;
+            display: block;
+
+            @media only screen and (max-width: $desktop) {
+                font-size: 3.4rem;
+             }
+        }
+
+        p {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            color: #545672;
+
+            @media only screen and (max-width: $desktop) {
+                font-size: 1.6rem;
+             }
+        }
+    }
+}

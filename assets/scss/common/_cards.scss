@@ -375,6 +375,7 @@
 .card-items {
     display: flex;
     flex-direction: column;
+    gap: 10rem;
 
     &.mt {
         margin-top: 10rem;
@@ -410,6 +411,7 @@
                 p {
                     font-size: 2.2rem;
                     line-height: 1.4;
+                    color: #545672;
 
                     @media only screen and (max-width: $desktop) {
                         font-size: 1.6rem;
