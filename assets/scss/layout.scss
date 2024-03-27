@@ -91,5 +91,43 @@ body {
 
 #smoother-content {
     will-change: transform;
-  }
+}
 
+
+.site-list {
+    width: 40rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+    margin: auto;
+
+    img {
+        width: 30rem;
+    }
+
+    .links {
+
+        ol {
+            margin-top: 6rem;
+       
+            li {
+                margin: 2rem 0;
+                list-style-type: decimal;
+                font-size: 2rem;
+                color: $white;
+                padding-left: 1rem;
+
+                a {
+                    font-size: 2rem;
+                    color: $white;
+                    display: flex;
+                    text-transform: capitalize;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
