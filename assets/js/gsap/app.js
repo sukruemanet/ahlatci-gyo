@@ -89,6 +89,18 @@ mm.add("(min-width: 1024px)", () => {
     });
   });
 
+  const imageScale = gsap.utils.toArray('.imageScale');
+  imageScale.forEach((box, i) => {
+    const anim = gsap.fromTo(box, { y:'-100px', scale: 1.5, willChange: "transform", }, { duration: 3, scale: 1, y:'0', willChange: "transform", });
+    ScrollTrigger.create({
+      trigger: box,
+      animation: anim,
+      toggleActions: 'play none none none',
+      once: true
+    });
+  });
+
+
 });
 
 //Menu
@@ -128,3 +140,34 @@ tl.reverse();
 menuopen.addEventListener('click', () => {
   tl.reversed(!tl.reversed());
 });
+
+
+//Scale
+console.clear();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  const slidesCount = slides.length;
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".content-image-caption",
+      start: "top top",
+      end: window.innerHeight * slidesCount + " top",
+      scrub: true,
+      pin: true,
+      // markers: true
+    }
+  });
+
+  tl.fromTo(
+    "#slide-1",
+    {
+      scale: 0.5
+    },
+    {
+      scale: 1
+    }
+  )
+});
+

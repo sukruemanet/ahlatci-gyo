@@ -28,6 +28,7 @@ h1 {
     color: $dark;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     &.type-1 {
         flex-direction: row;
