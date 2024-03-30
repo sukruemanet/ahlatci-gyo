@@ -22,17 +22,16 @@ figure {
     position: relative;
     overflow: hidden;
 
+    @media only screen and (max-width: $desktop-sm) {
+        height: 70vh;
+    }
+
     &:before {
         content: '';
         position: absolute;
         inset: 0;
         background: rgba($dark, .40);
         z-index: 1;
-    }
-
-    @media only screen and (max-width: $tablet-v) {
-        height: 70vh;
-        margin-bottom: 6rem;
     }
 
     .button-content {
@@ -45,6 +44,10 @@ figure {
         display: flex;
         align-items: center;
         padding: 6rem 0;
+
+        @media only screen and (max-width: $desktop-sm) {
+            display: none;
+        }
     }
 }
 
@@ -52,6 +55,11 @@ figure {
     display: flex;
     min-height: 10rem;
     margin-bottom: 7rem;
+
+    @media only screen and (max-width: $tablet-v) {
+        flex-direction: column;
+        min-height: auto;
+    }
 
     &.type-1 {
         margin-bottom: 0;
@@ -61,13 +69,30 @@ figure {
         width: 67%;
         background: $blue-2;
         padding: 10rem;
+
+        @media only screen and (max-width: $desktop-sm) {
+            padding: 10rem 4rem;
+        }
         
+        @media only screen and (max-width: $tablet-v) {
+            width: 100%;
+            padding: 4rem 2rem;
+        }
+
         span {
             max-width: 70%;
 
             @media only screen and (max-width: $desktop) {
                 max-width: 80%;
             }
+
+            @media only screen and (max-width: $tablet-h) {
+                max-width: 90%;
+             }
+
+             @media only screen and (max-width: $tablet-v) {
+                max-width: 100%;
+             }
         }
 
         a {
@@ -144,12 +169,28 @@ figure {
         align-items: flex-end;
         gap: 6rem;
 
+        @media only screen and (max-width: $desktop-sm) {
+            padding: 7rem 4rem;
+        }
+
+        @media only screen and (max-width: $tablet-v) {
+            width: 100%;
+        }
+
+        @media only screen and (max-width: $desktop) {
+            padding: 4rem 2rem;
+         }
+
         img {
             width: 36rem;
 
             @media only screen and (max-width: $desktop) {
                 width: 25rem;
             }
+
+            @media only screen and (max-width: $tablet-h) {
+                width: 20rem;
+             }
         }
 
         p {
@@ -183,6 +224,10 @@ figure {
     padding-top: 7rem;
     margin-bottom: 12rem;
 
+    @media only screen and (max-width: $tablet-h) {
+        margin-bottom: 8rem;
+    }
+
     .headline {
         display: flex;
         justify-content: space-between;
@@ -208,6 +253,16 @@ figure {
             @media only screen and (max-width: $desktop) {
                 font-size: 3.4rem;
              }
+
+             @media only screen and (max-width: $desktop-sm) {
+                font-size: 2.6rem;
+                max-width: 60rem;
+             }
+
+             @media only screen and (max-width: $tablet-v) {
+                font-size: 2rem;
+                max-width: 30rem;
+             }
         }
     }
 
@@ -221,8 +276,17 @@ figure {
     padding: 10rem 0;
     background: $blue-1;
 
+    @media only screen and (max-width: $tablet-v) {
+        margin: 6rem 0;
+        padding: 6rem 0;
+     }
+
     .head {
         max-width: 90rem;
+
+        @media only screen and (max-width: $tablet-h) {
+            max-width: 70rem;
+         }
     }
 
     .items {
@@ -230,10 +294,21 @@ figure {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+
+        @media only screen and (max-width: $tablet-v) {
+            flex-direction: column;
+            gap: 4rem;
+        }
+        
+        @media only screen and (max-width: $tablet-v) {
+            justify-content: flex-start;
+        }
     }
 
     .left {
         width: 100%;
+        display: flex;
+        flex-direction: column;
 
         .caption {
             max-width: 40rem;
@@ -242,6 +317,14 @@ figure {
             margin-left: auto;
             margin-bottom: 8rem;
             margin-right: 8rem;
+            margin-top: 2rem;
+
+             @media only screen and (max-width: $tablet-v) {
+                max-width: 100%;
+                margin-right: 0;
+                margin-top: 4rem;
+                margin-left: 8rem;
+             }
 
             p {
                 font-size: 2.4rem;
@@ -252,6 +335,10 @@ figure {
                 @media only screen and (max-width: $desktop) {
                     font-size: 1.8rem;
                  }
+
+                 @media only screen and (max-width: $tablet-v) {
+                    font-size: 1.5rem;
+                 }
             }
 
             a {
@@ -260,9 +347,23 @@ figure {
         }
 
         .images {
+            width: 80rem;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+
+            @media only screen and (max-width: $desktop-sm) {
+                width: 60rem;
+             }
+
+            @media only screen and (max-width: $tablet-h) {
+                width: 50rem;
+                gap: 4rem;
+             }
+
+             @media only screen and (max-width: $tablet-v) {
+                width: 100%;
+             }
 
              .icon {
                 margin-right: 8rem;
@@ -276,7 +377,25 @@ figure {
     }
 
     .right {
-        width: 80rem;
+        max-width: 50rem;
+        width: 100%;
+
+        @media only screen and (max-width: $tablet-h) {
+            width: 100%;
+         }
+
+         @media only screen and (max-width: $tablet-v) {
+            max-width: 100%;
+        }
+
+         img {
+
+            @media only screen and (max-width: $tablet-v) {
+                height: 30rem;
+                object-fit: cover;
+                object-position: center;
+             }
+         }
     }
 }
 
@@ -284,13 +403,26 @@ figure {
     margin-bottom: 7rem;
     display: flex;
 
+    @media only screen and (max-width: $tablet-v) {
+        flex-direction: column-reverse;
+        gap: 6rem;
+     }
+
     figure {
         width: 40%;
         flex-shrink: 0;
+
+        @media only screen and (max-width: $tablet-v) {
+            width: 100%;
+         }
     }
 
     .content {
         padding-left: 10rem;
+
+        @media only screen and (max-width: $tablet-v) {
+            padding-left: 0;
+         }
         
         ul {
             display: flex;
@@ -322,8 +454,12 @@ figure {
                    @include fade-transition;
 
                    @media only screen and (max-width: $desktop) {
-                    font-size: 2.4rem;
-                 }
+                        font-size: 2.4rem;
+                    }
+
+                    @media only screen and (max-width: $tablet-v) {
+                        font-size: 2rem;
+                     }
 
                    i {
                         margin-left: auto;

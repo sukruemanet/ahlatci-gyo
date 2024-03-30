@@ -12,8 +12,13 @@
     outline: solid $white .1rem;
     @include fade-transition;
 
+    // @media only screen and (max-width: $tablet-h) {
+    //     display: none !important;
+    // }
+
     @media only screen and (max-width: $tablet-h) {
-        display: none !important;
+        width: 6rem;
+        height: 6rem;
     }
 
     &:hover {
@@ -38,6 +43,10 @@
 
     .swiper-slide  {
         height: 100vh;
+
+        @media only screen and (max-width: $desktop-sm) {
+            height: 70vh;
+        }
         
         figure {
 
@@ -54,9 +63,15 @@
             inset: auto 10rem 10rem;
 
             @media only screen and (max-width: $desktop) {
-                max-width: 100rem;
+                max-width: 48rem;
+                inset: auto 6rem 6rem;
             }
 
+            @media only screen and (max-width: $desktop) {
+                max-width: 48rem;
+                inset: auto 4rem 10rem;
+            }
+            
             small {
                 font-size: 2rem;
                 color: $white;
@@ -84,6 +99,15 @@
                 @media only screen and (max-width: $desktop) {
                     font-size: 6.4rem;
                 }
+
+                @media only screen and (max-width: $desktop-sm) {
+                    margin-bottom: 4rem;
+                }
+                
+                @media only screen and (max-width: $desktop) {
+                    font-size: 4.6rem;
+                }
+
             }
 
             p {
@@ -92,6 +116,10 @@
 
                 @media only screen and (max-width: $desktop) {
                     font-size: 2.4rem;
+                }
+
+                @media only screen and (max-width: $desktop) {
+                    font-size: 1.8rem;
                 }
             }
         }
@@ -105,11 +133,35 @@
         right: 0;
         bottom: 0;
         z-index: 1;
+
+        @media only screen and (max-width: $tablet-h) {
+            bottom: 1rem;
+            right: 1rem;
+            flex-direction: row-reverse;
+            width: 12rem;
+        }
+    }
+}
+
+.product-slider {
+    .swiper-button-next,
+    .swiper-button-prev {
+        @media only screen and (max-width: $tablet-h) {
+            display: none;;
+        }
     }
 }
 
 .content-slider {
     padding-left: 10rem;
+
+    @media only screen and (max-width: $desktop-sm) {
+        padding-left: 4rem;
+    }
+
+    @media only screen and (max-width: $tablet-v) {
+        padding-left: 2rem;
+    }
 
     .slider {
         position: relative;
@@ -118,6 +170,16 @@
     .content-headline {
         padding-right: 10rem;
         margin-bottom: 8rem;
+
+        @media only screen and (max-width: $desktop-sm) {
+            padding-right: 4rem;
+        }
+
+        @media only screen and (max-width: $tablet-v) {
+            flex-direction: column;;
+            padding-right: 2rem;
+            margin-bottom: 0;
+        }
 
         .head {
             span {
@@ -146,34 +208,11 @@
     .swiper-button-next {
         right: 4rem;
     }
-}
 
-.content-slider {
-    padding-left: 10rem;
-
-    .slider {
-        position: relative;
-    }
-
-    .swiper-button-prev, .swiper-button-next {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-        width: 9rem;
-        height: 9rem;
-
-        @media only screen and (max-width: $desktop-sm) {
-            width: 7rem;
-            height: 7rem;
+    .product-slider {
+        @media only screen and (max-width: $tablet-v) {
+            margin: 6rem 0;
         }
-    }
-
-    .swiper-button-prev {
-        left: 4rem;
-    }
-
-    .swiper-button-next {
-        right: 4rem;
     }
 }
 

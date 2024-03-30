@@ -151,6 +151,7 @@
 .projects-cards {
     margin: 10rem 0;
 
+
     &.row {
         gap: 10rem 4rem;
 
@@ -168,6 +169,10 @@
                     background: $blue;
                     padding: 6rem 4rem;
                     @include fade-transition;
+
+                    @media only screen and (max-width: $tablet-h) {
+                        padding: 4rem 3rem;
+                    }
                 }
             }
         }
@@ -179,6 +184,14 @@
 
                 @media only screen and (max-width: $desktop) {
                     height: 70rem;
+                }
+
+                @media only screen and (max-width: $desktop-sm) {
+                    height: 60rem;
+                }
+
+                @media only screen and (max-width: $tablet-v) {
+                    height: 30rem;
                 }
             }
 
@@ -193,11 +206,23 @@
                 position: absolute;
                 inset: auto 0 0;
 
+                @media only screen and (max-width: $tablet-h) {
+                    padding: 2rem 3rem;
+                }
+
+                @media only screen and (max-width: $tablet-v) {
+                    position: relative;
+                }
+
                 span {
                     font-size: 3.2rem;
 
                     @media only screen and (max-width: $desktop) {
                         font-size: 2.4rem;
+                    }
+
+                    @media only screen and (max-width: $tablet-v) {
+                        font-size: 2.2rem;
                     }
                 }
 
@@ -206,6 +231,10 @@
 
                     @media only screen and (max-width: $desktop) {
                         font-size: 1.8rem;
+                    }
+
+                    @media only screen and (max-width: $tablet-v) {
+                        font-size: 1.6rem;
                     }
                 }
 
@@ -318,6 +347,10 @@
     position: relative;
     margin: 12rem 0 0;
 
+    @media only screen and (max-width: $tablet-v) {
+        margin: 6rem 0 0;
+     }
+
     figure {
         position: relative;
         display: flex;
@@ -334,14 +367,20 @@
         
         img {
             height: 90rem;
+            object-fit: cover;
 
             @media only screen and (max-width: $desktop) {
                 height: 70rem;
             }
+
+            @media only screen and (max-width: $tablet-v) {
+                height: 50rem;
+            }
         }
 
         figcaption {
-            width: 56rem;
+            max-width: 56rem;
+            width: 100%;
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0);
@@ -352,6 +391,7 @@
             z-index: 2;
             color: $white;
             text-align: center;
+            padding: 0 2rem;
 
             span {
                 font-size: 6rem;

@@ -12,6 +12,14 @@ header {
   z-index: 2;
   transition: all .5s;
 
+  @media only screen and (max-width: $desktop-sm) {
+    inset: 0 4rem auto;
+  }
+
+  @media only screen and (max-width: $tablet-h) {
+    inset: 0 2rem auto;
+  }
+
   &:before {
     content: '';
     width: 100%;
@@ -38,13 +46,9 @@ header {
     img {
       width: 26rem;
 
-      @media only screen and (max-width: $desktop) {
-        width: 20rem;
-     }  
-
      @media only screen and (max-width: $tablet-h) {
-      width: 14rem;
-   } 
+      width: 22rem;
+      } 
     }
   }
 
@@ -160,16 +164,31 @@ header {
   padding: 22rem 6rem 6rem;
   @include fade-transition;
 
+  @media only screen and (max-width: $tablet-v) {
+    width: 100%;
+    right: -100%;
+    padding: 10rem 2rem 2rem;
+  }
+
   .menu {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 8rem;
+
+    @media only screen and (max-width: $tablet-v) {
+      flex-direction: column;
+    }
 
     li {
       width: 50%;
       height: 7rem;
       overflow: hidden;
       display: flex;
+
+      @media only screen and (max-width: $tablet-v) {
+        width: 100%;
+        height: 5rem;
+      }
 
       a {
         display: flex;
@@ -203,10 +222,19 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media only screen and (max-width: $tablet-v) {
+          width: 4rem;
+          height: 4rem;
+        }
         
         svg {
           width: 3rem;
           fill: $blue-1;
+
+          @media only screen and (max-width: $tablet-v) {
+            width: 2.4rem;
+          }
         }
       }
     }

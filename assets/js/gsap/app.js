@@ -64,8 +64,6 @@ mm.add("(min-width: 1024px)", () => {
 
   scroll();
 
-
-  //fadeYbottom
   const fadeYbottom = gsap.utils.toArray('.fadeYbottom');
   fadeYbottom.forEach((box, i) => {
     const anim = gsap.fromTo(box, { autoAlpha: 0, scale: .8, y: 200 }, { duration: 1, autoAlpha: 1, y: 0, scale: 1, });
@@ -77,7 +75,6 @@ mm.add("(min-width: 1024px)", () => {
     });
   });
 
-  //fadeup
   const fadeUp = gsap.utils.toArray('.fadeUp');
   fadeUp.forEach((box, i) => {
     const anim = gsap.fromTo(box, { autoAlpha: 0, y: 160 }, { duration: 1, autoAlpha: 1, y: 0 });
@@ -100,6 +97,34 @@ mm.add("(min-width: 1024px)", () => {
     });
   });
 
+  //Scale
+  console.clear();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    const slidesCount = slides.length;
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".content-image-caption",
+        start: "top top",
+        end: window.innerHeight * slidesCount + " top",
+        scrub: true,
+        pin: true,
+        // markers: true
+      }
+    });
+
+    tl.fromTo(
+      "#slide-1",
+      {
+        scale: 0.5
+      },
+      {
+        scale: 1
+      }
+    )
+  });
 
 });
 
@@ -139,35 +164,5 @@ tl.reverse();
 
 menuopen.addEventListener('click', () => {
   tl.reversed(!tl.reversed());
-});
-
-
-//Scale
-console.clear();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".slide");
-  const slidesCount = slides.length;
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".content-image-caption",
-      start: "top top",
-      end: window.innerHeight * slidesCount + " top",
-      scrub: true,
-      pin: true,
-      // markers: true
-    }
-  });
-
-  tl.fromTo(
-    "#slide-1",
-    {
-      scale: 0.5
-    },
-    {
-      scale: 1
-    }
-  )
 });
 

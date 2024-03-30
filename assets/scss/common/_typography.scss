@@ -34,6 +34,13 @@ h1 {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
+
+        @media only screen and (max-width: $tablet-v) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1rem;
+        }
     }
 
     &.type-2 {
@@ -68,8 +75,16 @@ h1 {
     span {
         font-size: 4rem;
 
-        @media only screen and (max-width: $desktop) {
+        @media only screen and (max-width: $desktop-sm) {
+            font-size: 3.2rem;
+         }
+
+         @media only screen and (max-width: $tablet-h) {
             font-size: 2.4rem;
+         }
+
+         @media only screen and (max-width: $tablet-v) {
+            font-size: 2rem;
          }
     }
 

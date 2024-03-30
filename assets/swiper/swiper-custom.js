@@ -30,7 +30,7 @@ var swiper = new Swiper(".product-slider", {
     },
     // when window width is >= 480px
     768: {
-      slidesPerView: 3.2,
+      slidesPerView: 2.2,
       spaceBetween: 30
     },
     // when window width is >= 640px

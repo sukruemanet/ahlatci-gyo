@@ -9,6 +9,14 @@ footer {
     margin-top: 10rem;
     padding: 0 10rem 10rem;
 
+    @media only screen and (max-width: $desktop-sm) {
+        padding: 0 4rem 10rem;
+     }
+
+     @media only screen and (max-width: $tablet-h) {
+        padding: 0 2rem 6rem;
+    }
+
     nav {
         display: flex;
         align-items: flex-start;
@@ -19,7 +27,9 @@ footer {
 
         @media only screen and (max-width: $tablet-h) {
             flex-direction: column;
-         }
+            gap: 6rem;
+            padding-top: 4rem;
+        }
 
          div {
             @media only screen and (max-width: $tablet-v) {
@@ -31,11 +41,14 @@ footer {
             width: 26rem;
         }
 
-
-
         .right {
             display: flex;
             gap: 20rem;
+
+            @media only screen and (max-width: $tablet-h) {
+               flex-direction: column;
+               gap: 6rem;
+             }
 
             .menu {
                 display: flex;
@@ -71,7 +84,6 @@ footer {
             
                     span {
                         font-size: 2.4rem;
-                        margin-bottom: 3rem;
                         display: block;
             
                         @media only screen and (max-width: $desktop) {
@@ -147,21 +159,19 @@ footer {
         position: relative;
 
         @media only screen and (max-width: $tablet-h) {
-            margin-top: 0;
-            padding-top: 2rem;
-            border: none;
-        }
-
-        @media only screen and (max-width: $tablet-v) {
             flex-direction: column;
-            gap: 1.6rem;
-            margin-top: 4rem;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
 
         .info {
             display: flex;
             flex-direction: column;
             gap: 4rem;
+
+            @media only screen and (max-width: $tablet-h) {
+                gap: 2rem;
+            }
 
             .email {
                 font-size: 2.2rem;
@@ -181,6 +191,10 @@ footer {
             ul {
                 display: flex;
                 gap: 2rem;
+
+                @media only screen and (max-width: $tablet-h) {
+                    flex-direction: column;
+                }
 
                 li {
                     a {
