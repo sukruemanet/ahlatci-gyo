@@ -44,7 +44,7 @@
     .swiper-slide  {
         height: 100vh;
 
-        @media only screen and (max-width: $desktop-sm) {
+        @media only screen and (max-width: $tablet-h) {
             height: 70vh;
         }
         

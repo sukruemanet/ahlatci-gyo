@@ -22,7 +22,7 @@ figure {
     position: relative;
     overflow: hidden;
 
-    @media only screen and (max-width: $desktop-sm) {
+    @media only screen and (max-width: $tablet-h) {
         height: 70vh;
     }
 

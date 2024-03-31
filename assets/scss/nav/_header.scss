@@ -171,6 +171,10 @@ header {
   padding: 12rem 6rem 6rem;
   @include fade-transition;
 
+  @media only screen and (max-width: $desktop) {
+    padding: 8rem 6rem 6rem;
+  }
+
   @media only screen and (max-width: $tablet-v) {
     width: 100%;
     right: -100%;
@@ -183,14 +187,17 @@ header {
     flex-wrap: wrap;
     margin-bottom: 8rem;
 
+    @media only screen and (max-width: $desktop) {
+      margin-bottom: 4rem;
+    }
+
     @media only screen and (max-width: $tablet-v) {
       flex-direction: column;
-      margin-bottom: 4rem;
     }
 
     li {
       width: 50%;
-      height: 7rem;
+      height: 6rem;
       overflow: hidden;
       display: flex;
 
@@ -244,7 +251,7 @@ header {
         justify-content: center;
         align-items: center;
 
-        @media only screen and (max-width: $tablet-v) {
+        @media only screen and (max-width: $desktop) {
           width: 4rem;
           height: 4rem;
         }
@@ -253,7 +260,7 @@ header {
           width: 3rem;
           fill: $blue-1;
 
-          @media only screen and (max-width: $tablet-v) {
+          @media only screen and (max-width: $desktop) {
             width: 2.4rem;
           }
         }
@@ -266,9 +273,13 @@ header {
     @media only screen and (max-width: $tablet-v) {
       margin-left: auto;
     }
-    
+
     img {
       max-width: 30rem;
+
+      @media only screen and (max-width: $desktop-sm) {
+        max-width: 20rem;
+      }
 
       @media only screen and (max-width: $tablet-v) {
         max-width: 16rem;
