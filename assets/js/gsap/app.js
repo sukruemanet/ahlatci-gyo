@@ -3,6 +3,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 mm.add("(min-width: 1024px)", () => {
 
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".start",
+      toggleActions: "play none none none",
+      // markers: true,
+      scrub: true,
+      pin: ".start",
+      pinSpacing: false,
+      start: "top+=1 top",
+      end: "bottom top",
+      // end: "bottom top+=10%",
+      id: "start-bg"
+    }
+  });
+
   // Video
   const tl = gsap.timeline({
     scrollTrigger: {
