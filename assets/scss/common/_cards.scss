@@ -30,6 +30,14 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            @media only screen and (max-width: $desktop) {
+                max-width: 90rem;
+            }
+    
+            @media only screen and (max-width: $tablet-v) {
+                inset: 12rem 2rem 10rem;
+            }
         }
     }
 
@@ -37,10 +45,13 @@
         max-width: 120rem;
         position: absolute;
         inset: auto 10rem 10rem;
-        z-index: 1;
 
         @media only screen and (max-width: $desktop) {
-            max-width: 100rem;
+            max-width: 90rem;
+        }
+
+        @media only screen and (max-width: $tablet-v) {
+            inset: auto 2rem 10rem;
         }
 
         small {
@@ -68,7 +79,20 @@
             display: block;
 
             @media only screen and (max-width: $desktop) {
-                font-size: 6.4rem;
+                font-size: 7.2rem;
+            }
+
+            @media only screen and (max-width: $desktop-sm) {
+                margin-bottom: 4rem;
+            }
+            
+            @media only screen and (max-width: $tablet-h) {
+                font-size: 4.6rem;
+            }
+
+            @media only screen and (max-width: $tablet-v) {
+                font-size: 3.4rem;
+                margin-bottom: 2rem;
             }
         }
 
@@ -111,6 +135,10 @@
                 display: flex;
                 align-items: center;
                 gap: 1rem;
+
+                @media only screen and (max-width: $tablet-v) {
+                    font-size: 1.6rem;
+                }
             }
         }
     }
@@ -249,11 +277,19 @@
 .news-cards {
     margin: 10rem 0;
 
+    @media only screen and (max-width: $tablet-h) {
+        margin: 4rem 0;
+    }
+
     &.row {
         gap: 6rem 4rem;
 
         @media only screen and (max-width: $desktop) {
             gap: 10rem 2rem;
+        }
+
+        @media only screen and (max-width: $tablet-h) {
+            gap: 4rem 2rem;
         }
     }
 
@@ -277,7 +313,7 @@
                 object-fit: cover;
 
                 @media only screen and (max-width: $desktop) {
-                    height: 70rem;
+                    height: 40rem;
                 }
             }
 
@@ -286,6 +322,10 @@
                 flex-direction: column;
                 padding: 4rem 0;
                 gap: 2rem;
+
+                @media only screen and (max-width: $tablet-h) {
+                    padding: 2rem 0;
+                }
       
                 @include fade-transition;
 
@@ -296,6 +336,11 @@
                     @media only screen and (max-width: $desktop) {
                         font-size: 2.4rem;
                     }
+
+
+                    @media only screen and (max-width: $tablet-h) {
+                        font-size: 2.2rem;
+                    }
                 }
 
                 .date {
@@ -305,6 +350,11 @@
 
                     @media only screen and (max-width: $desktop) {
                         font-size: 1.8rem;
+                    }
+
+                    @media only screen and (max-width: $tablet-h) {
+                        font-size: 1.4rem;
+                        margin-top: 0;
                     }
                 }
 
@@ -426,8 +476,20 @@
         justify-content: space-between;
         gap: 20rem;
 
+        @media only screen and (max-width: $desktop-sm) {
+            gap: 10rem;
+        }
+
+        @media only screen and (max-width: $tablet-v) {
+            flex-direction: column;
+         }
+
         &:nth-child(even) {
             flex-direction: row-reverse;
+
+            @media only screen and (max-width: $tablet-v) {
+                flex-direction: column;
+             }
         }
 
         .item {
@@ -446,6 +508,10 @@
                     @media only screen and (max-width: $desktop) {
                         font-size: 3.4rem;
                      }
+
+                     @media only screen and (max-width: $tablet-h) {
+                        font-size: 3rem;
+                    }
                 }
     
                 p {
@@ -461,8 +527,16 @@
         }
 
         figure {
-            width: 46rem;
+            max-width: 46rem;
             flex-shrink: 0;
+
+            @media only screen and (max-width: $tablet-h) {
+                max-width: 36rem;
+            }
+
+            @media only screen and (max-width: $tablet-v) {
+                max-width: 100%;
+             }
         }
     }
 }

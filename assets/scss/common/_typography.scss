@@ -50,12 +50,24 @@ h1 {
     &.type-2 {
         width: 100%;
         padding: 10rem 0 0;
+
+        @media only screen and (max-width: $tablet-h) {
+            padding: 4rem 0 0;
+        }
         
         span {
             max-width: 200rem;
             width: 100%;
             margin: 0 auto;
             padding: 0 10rem;
+
+            @media only screen and (max-width: $desktop) {
+                padding: 0 4rem;
+            }
+
+            @media only screen and (max-width: $tablet-h) {
+                padding: 0 2rem;
+            }
         }
     }
 
@@ -75,15 +87,15 @@ h1 {
     span {
         font-size: 4rem;
 
-        @media only screen and (max-width: $desktop-sm) {
+        @media only screen and (max-width: $desktop) {
             font-size: 3.2rem;
          }
 
-         @media only screen and (max-width: $tablet-h) {
+         @media only screen and (max-width: $desktop-sm) {
             font-size: 2.4rem;
          }
 
-         @media only screen and (max-width: $tablet-v) {
+         @media only screen and (max-width: $tablet-h) {
             font-size: 2rem;
          }
     }
@@ -148,14 +160,30 @@ h1 {
         padding:14rem 14rem 8rem;
         display: flex;
         flex-direction: column;
+
+        @media only screen and (max-width: $desktop) {
+            padding: 12rem 6rem 8rem;
+        }
+
+        @media only screen and (max-width: $tablet-h) {
+            padding: 12rem 2rem 8rem;
+        }
       
         span {
             font-size: 3rem;
             color: $white;
+
+            @media only screen and (max-width: $tablet-h) {
+                font-size: 2rem;
+            }
         }
 
         h1 {
             margin-bottom: 2rem;
+
+            @media only screen and (max-width: $tablet-h) {
+                font-size: 4.6rem;
+            }
         }
     }
 
@@ -172,8 +200,17 @@ h1 {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
+
+                @media only screen and (max-width: $tablet-h) {
+                    font-size: 1.8rem;
+                }
             }
         }
+    }
+
+    h1 {
+   
+        
     }
 
     .filter {

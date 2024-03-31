@@ -57,7 +57,7 @@ figure {
     margin-bottom: 7rem;
     position: relative;
 
-    @media only screen and (max-width: $tablet-v) {
+    @media only screen and (max-width: $tablet-h) {
         flex-direction: column;
         min-height: auto;
     }
@@ -75,7 +75,7 @@ figure {
             padding: 10rem 4rem;
         }
         
-        @media only screen and (max-width: $tablet-v) {
+        @media only screen and (max-width: $tablet-h) {
             width: 100%;
             padding: 4rem 2rem;
         }
@@ -114,8 +114,16 @@ figure {
                 display: flex;
                 justify-content: space-between;
 
+                @media only screen and (max-width: $tablet-v) {
+                    flex-direction: column;
+                }
+
                 &:first-child {
                     margin-bottom: 16rem;
+
+                    @media only screen and (max-width: $tablet-v) {
+                        margin-bottom: 0;
+                    }
                 }
                 
                 .item {
@@ -124,9 +132,18 @@ figure {
                     flex-direction: column;
                     color: $blue-3;
 
+                    @media only screen and (max-width: $tablet-v) {
+                        width: 100%;
+                        margin-bottom: 4rem;
+                    }
+
                     small {
                         font-size: 1.8rem;
                         margin-bottom: 4rem;
+
+                        @media only screen and (max-width: $tablet-v) {
+                            margin-bottom: 1rem;
+                        }
                     }
                 }
             }
@@ -209,6 +226,11 @@ figure {
         background: $blue;
         position: relative;
         overflow: hidden;
+
+        @media only screen and (max-width: $tablet-h) {
+            width: 100%;
+            height: 40rem;
+        }
 
         iframe {
             position: absolute;
@@ -480,9 +502,17 @@ figure {
     grid-template-columns: repeat(12, 1fr);
     margin-top: 12rem;
 
+    @media only screen and (max-width: $tablet-h) {
+        margin-top: 6rem;
+    }
+
     .image {
         grid-column: span 5;
         grid-row: span 2;
+
+        @media only screen and (max-width: $tablet-v) {
+            grid-column: span 12;
+        }
 
         figure {
             position: relative;
@@ -494,12 +524,20 @@ figure {
         grid-column: span 7;
         color: $white;
 
+        @media only screen and (max-width: $tablet-v) {
+            grid-column: span 12;
+        }
+
     }
 
     .item-2 {
         grid-column: span 7;
         position: relative;
         color: $dark;
+
+        @media only screen and (max-width: $tablet-v) {
+            grid-column: span 12;
+        }
         
         &::before {
             content: '';
@@ -510,6 +548,10 @@ figure {
             right: -200%;
             bottom: -1rem;
             z-index: -1;
+
+            @media only screen and (max-width: $tablet-v) {
+                bottom: 0;
+            }
         }
     }
 
@@ -520,6 +562,10 @@ figure {
         align-items: center;
         justify-content: flex-end;
 
+        @media only screen and (max-width: $tablet-v) {
+            padding: 4rem 0;
+        }
+
         p {
             margin-left: 20rem;
             font-size: 2.2rem;
@@ -528,6 +574,14 @@ figure {
             @media only screen and (max-width: $desktop) {
                 font-size: 1.6rem;
              }
+
+             @media only screen and (max-width: $desktop-sm) {
+                margin-left: 10rem;
+             }
+
+             @media only screen and (max-width: $tablet-v) {
+                margin-left: 0;
+            }
         }
     }
 }
