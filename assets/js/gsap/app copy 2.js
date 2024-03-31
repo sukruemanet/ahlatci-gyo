@@ -152,7 +152,6 @@ const icon = menu.querySelectorAll('.main-menu .icon img');
 
 var tl = gsap.timeline({ paused: true });
 
-// Menü açılışı animasyonu
 tl.to(menu, {
   duration: .5,
   opacity: 1,
@@ -161,7 +160,7 @@ tl.to(menu, {
   visibility: "visible",
   willChange: "transform",
 })
-.from([menuitem, social, icon], {
+.from([menuitem, social], {
   opacity: 0,
   duration: 1.2,
   ease: "power4.out",
@@ -170,13 +169,25 @@ tl.to(menu, {
   willChange: "transform",
 }, "-=0.1");
 
-// Menü kapanışı animasyonu
-menuopen.addEventListener('click', () => {
-  if (tl.progress() === 1) {
-    tl.reverse();
-  } else {
-    tl.play();
-  }
-});
+// Menu kapatıldığında opacity değerlerini sıfırla
+tl.to([menuitem, social], {
+  opacity: 1,
+  duration: 1,
+  ease: "power4.out",
+}, "-=0.2");
 
+tl.to(icon, {
+  duration: .5,
+  opacity: 1,
+  ease: 'expo.inOut',
+  visibility: "visible",
+  willChange: "transform",
+})
+
+
+tl.reverse();
+
+menuopen.addEventListener('click', () => {
+  tl.reversed(!tl.reversed());
+});
 

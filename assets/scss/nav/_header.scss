@@ -20,6 +20,10 @@ header {
     inset: 0 2rem auto;
   }
 
+  @media only screen and (max-width: $tablet-v) {
+    height: 7rem;
+  } 
+
   &:before {
     content: '';
     width: 100%;
@@ -49,18 +53,11 @@ header {
      @media only screen and (max-width: $tablet-h) {
       width: 22rem;
       } 
-    }
-  }
 
-  .icon {
-    display: none;
-    svg {
-      width: 6rem;
-      height: 6rem;
+      @media only screen and (max-width: $tablet-v) {
+        width: 16rem;
+      } 
     }
-    @media only screen and (max-width: $tablet-h) {
-      display: flex;
-   }
   }
 
   nav {
@@ -79,6 +76,10 @@ header {
       color: $white;
       font-size: 2rem;
       @include fade-transition;
+
+      @media only screen and (max-width: $tablet-v) {
+        display: none;
+      } 
     }
 
     .menu-button {
@@ -89,9 +90,13 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media only screen and (max-width: $tablet-v) {
+        width: auto;
+      } 
       
       #hamburger-menu {
-        width: 2.6rem;
+        width: 3.4rem;
         height: 1rem;
         position: relative;
   
@@ -159,15 +164,18 @@ header {
   top: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
   z-index: 1;
   visibility: hidden;
-  padding: 22rem 6rem 6rem;
+  padding: 12rem 6rem 6rem;
   @include fade-transition;
 
   @media only screen and (max-width: $tablet-v) {
     width: 100%;
     right: -100%;
-    padding: 10rem 2rem 2rem;
+    padding: 6rem 2rem 2rem;
+    align-items: flex-start;
   }
 
   .menu {
@@ -177,6 +185,7 @@ header {
 
     @media only screen and (max-width: $tablet-v) {
       flex-direction: column;
+      margin-bottom: 4rem;
     }
 
     li {
@@ -196,6 +205,18 @@ header {
         font-size: 2.2rem;
         color: $white;
         gap: 1rem;
+
+        &:hover {
+          svg {
+            opacity: 1;
+            @include fade-transition;
+          }
+        }
+
+        svg {
+          opacity: 0;
+          @include fade-transition;
+        }
       }
     }
   }
@@ -236,6 +257,21 @@ header {
             width: 2.4rem;
           }
         }
+      }
+    }
+  }
+
+  .icon {
+
+    @media only screen and (max-width: $tablet-v) {
+      margin-left: auto;
+    }
+    
+    img {
+      max-width: 30rem;
+
+      @media only screen and (max-width: $tablet-v) {
+        max-width: 16rem;
       }
     }
   }
