@@ -154,6 +154,20 @@ h1 {
         background: rgba(#0A0E35, .90);
     }
 
+    &.news {
+        .headline {
+            padding:14rem 14rem 4rem;
+
+            @media only screen and (max-width: $desktop) {
+                padding: 12rem 6rem 4rem;
+            }
+
+            @media only screen and (max-width: $tablet-h) {
+                padding: 12rem 2rem 4rem;
+            }
+        }
+    }
+
     .headline {
         position: relative;
         width: 100%;
