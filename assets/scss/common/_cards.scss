@@ -13,6 +13,7 @@
         position: absolute;
         inset: 0;
         background: rgba($black, .40);
+        z-index: 1;
     }
 
     figure {
@@ -45,6 +46,7 @@
         max-width: 120rem;
         position: absolute;
         inset: auto 10rem 10rem;
+        z-index: 2;
 
         @media only screen and (max-width: $desktop) {
             max-width: 90rem;
@@ -62,6 +64,10 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
+
+            @media only screen and (max-width: $tablet-h) {
+                font-size: 1.6rem;
+            }
 
             &::before {
                 content: ' ';
@@ -120,6 +126,10 @@
         z-index: 1;
         right: 0;
         bottom: 0;
+
+        @media only screen and (max-width: $tablet-h) {
+            display: none;
+        }
     }
 
     .breadcrumb {
@@ -184,7 +194,7 @@
         gap: 10rem 4rem;
 
         @media only screen and (max-width: $desktop) {
-            gap: 10rem 2rem;
+            gap: 4rem 2rem;
         }
     }
 
@@ -377,6 +387,10 @@
 .gallery-cards {
     margin: 10rem 0;
 
+    @media only screen and (max-width: $tablet-h) {
+        margin: 4rem 0 6rem;
+     }
+
     .item {
         position: relative;
 
@@ -388,8 +402,18 @@
                 @media only screen and (max-width: $desktop) {
                     height: 60rem;
                 }
+
+                @media only screen and (max-width: $tablet-h) {
+                    height: 40rem;
+                 }
             }
         }
+    }
+
+    .swiper-button-prev, .swiper-button-next  {
+        @media only screen and (max-width: $tablet-h) {
+            display: none;
+         }
     }
 }
 

@@ -592,6 +592,14 @@ figure {
     margin: 14rem 0;
     gap: 10rem;
 
+    @media only screen and (max-width: $desktop) {
+        margin: 8rem 0;
+     }
+
+     @media only screen and (max-width: $desktop-sm) {
+        margin: 4rem 0;
+     }
+
     .item {
         display: flex;
         justify-content: space-between;
@@ -617,5 +625,121 @@ figure {
                 }
             }
         }
+    }
+
+    .text-content {
+
+    
+        h4 {
+            font-size: clamp(2.4rem, 12vw, 2.8rem);
+            font-weight: $font-medium;
+            color: #042D56;
+            letter-spacing: -0.2px;
+            margin-top: 6rem;
+            margin-bottom: 1rem;
+    
+            &:first-child {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    
+        h3 {
+            font-size: clamp(2rem, 12vw, 2.4rem);
+            letter-spacing: 0;
+            font-weight: $font-medium;
+            margin-top: 8rem;
+            margin-bottom: 4rem;
+    
+            @media only screen and (max-width: $tablet-v) {
+                font-size: clamp(1.7rem, 12vw, 2rem);
+                margin-top: 4rem;
+            }
+        }
+    
+        p {
+            font-size: clamp(1.6rem, 12vw, 1.8rem);
+            margin-bottom: 2rem;
+            line-height: 2.6rem;
+
+            @media only screen and (max-width: $tablet-v) {
+                font-size: clamp(1.4rem, 12vw, 1.6rem);
+            }
+    
+            strong {
+                font-weight: $font-medium;
+            }
+        }
+    
+        ul,
+        ol {
+            display: list-item;
+            padding-left: 2rem;
+            margin-bottom: 6rem;
+    
+            li {
+                font-size: clamp(1.6rem, 12vw, 1.8rem);
+                list-style: circle;
+                padding: 1rem 0;
+    
+                align-items: center;
+            }
+        }
+    
+        .table {
+            padding: 0;
+            margin-bottom: 6rem;
+    
+            tbody {
+                tr {
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    background-color: #FAFAFA;
+                }
+    
+                td {
+                    font-size: clamp(1.6rem, 12vw, 1.8rem);
+                    padding: 1rem;
+                    line-height: 2rem;
+                    max-width: 70rem;
+    
+                    @media only screen and (max-width: $tablet-v) {
+                        font-size: clamp(1.2rem, 12vw, 1.3rem);
+                        padding: 1rem;
+                    }
+    
+                    @media only screen and (max-width: $phone) {
+                        max-width: 6rem;
+    
+                    }
+    
+                    strong {
+                        @media only screen and (max-width: $phone) {
+                            overflow-wrap: anywhere;
+                        }
+                    }
+                }
+            }
+    
+    
+        }
+    
+        a {
+            text-decoration: underline;
+            @include fade-transition;
+            overflow-wrap: break-word;
+    
+            &:hover {
+                color: #4797e7;
+            }
+        }
+    }
+
+    table {
+        width: 100%; 
+    }
+
+    a {
+        color: $dark;
     }
 }

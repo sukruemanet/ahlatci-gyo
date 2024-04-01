@@ -218,6 +218,14 @@ h1 {
         gap: 1rem;
         margin-top: 4rem;
 
+        @media only screen and (max-width: $tablet-h) {
+            width: 100%;
+            cursor: default;
+            overflow: scroll hidden;
+            -ms-scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory;
+        }
+
         li {
             a {
                 display: flex;
@@ -228,6 +236,7 @@ h1 {
                 font-weight: $font-medium;
                 border: solid $blue-3 .1rem;
                 font-size: 2rem;
+                text-wrap: nowrap;
                 @include fade-transition;
 
                 @media only screen and (max-width: $desktop) {
