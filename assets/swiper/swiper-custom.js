@@ -35,11 +35,11 @@ var swiper = new Swiper(".product-slider", {
     },
     // when window width is >= 640px
     1024: {
-      slidesPerView: 2.8,
+      slidesPerView:  3,
       spaceBetween: 20
     },
     2560: {
-      slidesPerView: 3.8,
+      slidesPerView: 3,
       spaceBetween: 40
     }
   },
