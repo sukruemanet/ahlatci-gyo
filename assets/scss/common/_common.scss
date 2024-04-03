@@ -49,6 +49,31 @@ figure {
             display: none;
         }
     }
+
+    .video {
+        inset: 0;
+        height: 100vh;
+        position: absolute;
+        overflow: hidden;
+        z-index: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: rgba($dark, .30);
+            inset: 0;
+            z-index: 1;
+        }
+
+        video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
 }
 
 .content-captions {
@@ -556,6 +581,8 @@ figure {
 
             @media only screen and (max-width: $tablet-v) {
                 bottom: 0;
+                left: -2rem;
+                right: -2rem;
             }
         }
     }

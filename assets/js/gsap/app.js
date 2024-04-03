@@ -170,7 +170,7 @@ tl.to(menu, {
   willChange: "transform",
 }, "-=0.1");
 
-// Menü kapanışı animasyonu
+
 menuopen.addEventListener('click', () => {
   if (tl.progress() === 1) {
     tl.reverse();
@@ -179,4 +179,14 @@ menuopen.addEventListener('click', () => {
   }
 });
 
+let isMenuOpen = false;
 
+menuopen.addEventListener('click', () => {
+  if (!isMenuOpen) {
+    tl.play();
+    isMenuOpen = true;
+  } else {
+    tl.reverse();
+    isMenuOpen = false;
+  }
+});
