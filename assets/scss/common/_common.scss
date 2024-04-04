@@ -157,14 +157,60 @@ figure {
                     flex-direction: column;
                     color: $blue-3;
 
+                    &.address {
+                        gap: 4rem;
+
+                        small {
+                            margin-bottom: 0;
+                        }
+                    }
+
                     @media only screen and (max-width: $tablet-v) {
                         width: 100%;
                         margin-bottom: 4rem;
                     }
 
+                    .location-item {
+
+                        .location-name {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+                            margin-bottom: 2rem;
+
+                            svg {
+                                width: 2rem;
+                            }
+
+                            small {
+                                font-size: 2.4rem;
+
+                                @media only screen and (max-width: $desktop-sm) {
+                                    font-size: 1.8rem;
+                                }
+                            }
+                        }
+                        small {
+                            margin-bottom: 0;
+                            line-height: 0;
+                        }
+
+                        span {
+                            max-width: 100%;
+                            display: flex;
+                        }
+                    }
+
                     small {
                         font-size: 1.8rem;
                         margin-bottom: 4rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        svg {
+                            width: 2.4rem;
+                        }
 
                         @media only screen and (max-width: $tablet-v) {
                             margin-bottom: 1rem;
