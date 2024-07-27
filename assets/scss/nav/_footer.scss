@@ -39,6 +39,10 @@ footer {
 
         .logo {
             width: 26rem;
+
+            @media only screen and (max-width: $tablet-v) {
+                width: 20rem;
+             }
         }
 
         .right {
@@ -177,6 +181,7 @@ footer {
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+            padding-top: 0;
         }
 
         .info {
@@ -186,6 +191,7 @@ footer {
 
             @media only screen and (max-width: $tablet-h) {
                 gap: 2rem;
+                margin-bottom: 4rem;
             }
 
             .email {
