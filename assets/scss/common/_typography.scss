@@ -183,12 +183,21 @@ h1 {
             padding: 12rem 2rem 8rem;
         }
       
-        span {
+        span, a {
             font-size: 3rem;
             color: $white;
 
             @media only screen and (max-width: $tablet-h) {
                 font-size: 2rem;
+            }
+        }
+
+        a {
+            @include fade-transition;
+
+            &:hover {
+                opacity: .5;
+                @include fade-transition;
             }
         }
 
